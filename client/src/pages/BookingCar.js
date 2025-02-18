@@ -11,7 +11,6 @@ import AOS from 'aos';
 import {
   useLoaderData,
 } from "react-router-dom";
-
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 const { RangePicker } = DatePicker;
 function BookingCar() {
