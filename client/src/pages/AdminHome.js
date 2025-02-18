@@ -15,7 +15,6 @@ function AdminHome() {
   const { loading } = useSelector((state) => state.alertsReducer);
   const [totalCars, setTotalcars] = useState([]);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getAllCars());
   }, []);
