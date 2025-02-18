@@ -31,7 +31,6 @@ function EditCar() {
     dispatch(editCar(values));
     console.log(values);
   }
-
   return (
     <DefaultLayout>
       {loading && <Spinner />}
