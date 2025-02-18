@@ -5,7 +5,6 @@ import { alertsReducer } from './reducers/alertsReducer';
 import { carsReducer } from './reducers/carsReducer';
 import { bookingsReducer } from './reducers/bookingsReducer';
 const composeEnhancers = composeWithDevTools({});
-
 const rootReducer = combineReducers({
    carsReducer,
    alertsReducer,
