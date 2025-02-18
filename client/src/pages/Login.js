@@ -6,7 +6,7 @@ import { userLogin } from '../redux/actions/userActions'
 import AOS from 'aos';
 import Spinner from '../components/Spinner';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+// 
 AOS.init();
 function Login() {
     const dispatch = useDispatch()
