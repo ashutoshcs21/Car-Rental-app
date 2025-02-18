@@ -12,7 +12,6 @@ import UserBookings from './pages/UserBookings';
 import AddCar from './pages/AddCar';
 import AdminHome from './pages/AdminHome';
 import EditCar from './pages/EditCar';
-
 export const ProtectedRoute = ({ children }) => {
   
   if (localStorage.getItem('user')) {
