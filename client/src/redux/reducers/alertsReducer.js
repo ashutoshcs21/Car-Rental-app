@@ -1,7 +1,6 @@
 const initialData = {
     loading : false
 };
-
 export const alertsReducer=(state=initialData , action)=>{
 
     switch(action.type)
