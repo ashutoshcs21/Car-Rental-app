@@ -2,7 +2,6 @@ const initialData = {
     bookings : [],
 
 };
-
 export const bookingsReducer = (state=initialData , action)=>{
 
      switch(action.type)
