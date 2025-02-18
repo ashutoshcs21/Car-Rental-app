@@ -5,7 +5,6 @@ import DefaultLayout from '../components/DefaultLayout'
 import Spinner from '../components/Spinner'
 import { addCar } from '../redux/actions/carsActions'
 function AddCar() {
-
     const dispatch = useDispatch()
     const {loading} = useSelector(state=>state.alertsReducer)
 
