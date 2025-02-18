@@ -1,38 +1,51 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 5000
-const dotenv = require('dotenv')
+const express = require('express');
+const app = express();
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const path = require('path');
+const cors = require('cors');
 
-const dbConnection = require('./db')
-app.use(express.json())
-
-//env config
+// Load environment variables
 dotenv.config();
 
-app.use('/api/cars/' , require('./routes/carsRoute'))
-app.use('/api/users/' , require('./routes/usersRoute'))
-app.use('/api/bookings/' , require('./routes/bookingsRoute'))
+// Port Configuration
+const port = process.env.PORT || 5000;
 
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('Connected to DB ✅'))
+  .catch((error) => console.error('DB connection error: ', error));
 
-const path = require('path')
+// Middleware
+app.use(express.json());
 
-if(process.env.NODE_ENV==='production')
-{
+// CORS Configuration
+const corsOptions = {
+  origin: 'http://localhost:3000', // Allow requests from localhost:3000
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Allow cookies and other credentials
+};
+app.use(cors(corsOptions));
 
-    app.use('/' , express.static('client/build'))
+// Routes
+app.use('/api/cars/', require('./routes/carsRoute'));
+app.use('/api/users/', require('./routes/usersRoute'));
+app.use('/api/bookings/', require('./routes/bookingsRoute'));
 
-    app.get('*' , (req , res)=>{
+// Static Files for Production
+if (process.env.NODE_ENV === 'production') {
+  app.use('/', express.static(path.join(__dirname, 'client/build')));
 
-          res.send('Hello world')//File(path.resolve(__dirname, 'client/build/index.html'));
-
-    })
-
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+  });
 }
 
-app.get('/', (req, res) => res.send('Hello World!'))
+// Default Route
+app.get('/', (req, res) => res.send('Hello World!'));
 
-
- 
-
-
-app.listen(port, () => console.log(`Node JS Server Started in Port ${port}`))
+// Start Server
+app.listen(port, () => console.log(`Node.js Server started on port ${port}`));

@@ -24,7 +24,7 @@ router.post("/login", async(req, res) => {
 router.post("/register", async(req, res) => {
 
     
-
+console.log(req.body)
     try {
         const newuser = new User(req.body)
         await newuser.save()
