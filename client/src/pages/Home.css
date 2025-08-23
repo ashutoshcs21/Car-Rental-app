@@ -1,0 +1,159 @@
+/* Hero Section */
+
+.hero-section {
+    width: 100%;
+    height: 70vh;
+    background: url("https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1350&q=80") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    padding: 12px 28px;
+    background: #ff4d4f;
+    color: white;
+    border-radius: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #d9363e;
+}
+
+
+/* Car Section */
+
+.cars-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.car-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.car-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.car-info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.car-info p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.car-info span {
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.book-btn {
+    padding: 10px 20px;
+    background: #ff4d4f;
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.book-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.book-btn:hover {
+    background: #d9363e;
+}
+
+
+/* About Section */
+
+.about-section {
+    width: 100%;
+    background: linear-gradient(135deg, #000000, #1c1c1c);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.about-section .brand {
+    color: #ff4d4f;
+    font-weight: bold;
+}
